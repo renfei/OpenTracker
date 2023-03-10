@@ -1,6 +1,6 @@
 # OpenTracker
 
-为 [tracker.renfei.net](tracker.renfei.net) 提供驱动。tracker服务地址：
+为 [tracker.renfei.net](http://tracker.renfei.net) 提供驱动。tracker服务地址：
 
 * http://tracker.renfei.net:8080/announce
 * udp://tracker.renfei.net:8080/announce
