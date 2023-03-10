@@ -38,7 +38,7 @@ STRIP?=strip
 #FEATURES+=-DWANT_SPOT_WOODPECKER
 #FEATURES+=-DWANT_SYSLOGS
 #FEATURES+=-DWANT_DEV_RANDOM
-FEATURES+=-DWANT_FULLSCRAPE
+#FEATURES+=-DWANT_FULLSCRAPE
 
 # Is enabled on BSD systems by default in trackerlogic.h
 # on Linux systems you will need -lbds
