@@ -1,5 +1,10 @@
 # OpenTracker
 
+为 [tracker.renfei.net](tracker.renfei.net) 提供驱动。tracker服务地址：
+
+* http://tracker.renfei.net:8080/announce
+* udp://tracker.renfei.net:8080/announce
+
 ## 编译
 
 基于Centos
@@ -9,10 +14,11 @@ yum -y install unzip wget gcc zlib-devel make
 wget https://github.com/renfei/OpenTracker/archive/master.zip -O ~/OpenTracker.zip
 cd ~
 unzip OpenTracker.zip
-cd ~/OpenTracker-master/libowfat-0.31
+cd ~/OpenTracker-master/libowfat
 make
 cd ~/OpenTracker-master/opentracker
 make
+cp ~/OpenTracker-master/opentracker/opentracker ~/opentracker
 ```
 
 ## 启动
@@ -20,6 +26,7 @@ make
 运行程序，并且监听tcp和udp端口的8080，并且自动后台工作
 
 ```shell
+cd ~
 nohup ./opentracker -p 8080 -P 8080 > opentracker.log & tail -f opentracker.log
 ```
 
