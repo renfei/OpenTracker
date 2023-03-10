@@ -349,7 +349,7 @@ static unsigned long events_per_time( unsigned long long events, time_t t ) {
 static size_t stats_connections_mrtg( char * reply ) {
   ot_time t = time( NULL ) - ot_start_time;
   return sprintf( reply,
-                 "%llu\n%llu\n%i seconds (%i hours)\nopentracker connections, %lu conns/s :: %lu success/s.",
+                 "%llu\n%llu\n%i seconds (%i hours)\ntracker.renfei.net connections, %lu conns/s :: %lu success/s.",
                  ot_overall_tcp_connections+ot_overall_udp_connections,
                  ot_overall_tcp_successfulannounces+ot_overall_udp_successfulannounces+ot_overall_udp_connects,
                  (int)t,
@@ -362,7 +362,7 @@ static size_t stats_connections_mrtg( char * reply ) {
 static size_t stats_udpconnections_mrtg( char * reply ) {
   ot_time t = time( NULL ) - ot_start_time;
   return sprintf( reply,
-                 "%llu\n%llu\n%i seconds (%i hours)\nopentracker udp4 stats, %lu conns/s :: %lu success/s.",
+                 "%llu\n%llu\n%i seconds (%i hours)\ntracker.renfei.net udp4 stats, %lu conns/s :: %lu success/s.",
                  ot_overall_udp_connections,
                  ot_overall_udp_successfulannounces+ot_overall_udp_connects,
                  (int)t,
@@ -375,7 +375,7 @@ static size_t stats_udpconnections_mrtg( char * reply ) {
 static size_t stats_tcpconnections_mrtg( char * reply ) {
   time_t t = time( NULL ) - ot_start_time;
   return sprintf( reply,
-                 "%llu\n%llu\n%i seconds (%i hours)\nopentracker tcp4 stats, %lu conns/s :: %lu success/s.",
+                 "%llu\n%llu\n%i seconds (%i hours)\ntracker.renfei.net tcp4 stats, %lu conns/s :: %lu success/s.",
                  ot_overall_tcp_connections,
                  ot_overall_tcp_successfulannounces,
                  (int)t,
@@ -388,7 +388,7 @@ static size_t stats_tcpconnections_mrtg( char * reply ) {
 static size_t stats_scrape_mrtg( char * reply ) {
   time_t t = time( NULL ) - ot_start_time;
   return sprintf( reply,
-                 "%llu\n%llu\n%i seconds (%i hours)\nopentracker scrape stats, %lu scrape/s (tcp and udp)",
+                 "%llu\n%llu\n%i seconds (%i hours)\ntracker.renfei.net scrape stats, %lu scrape/s (tcp and udp)",
                  ot_overall_tcp_successfulscrapes,
                  ot_overall_udp_successfulscrapes,
                  (int)t,
@@ -400,7 +400,7 @@ static size_t stats_scrape_mrtg( char * reply ) {
 static size_t stats_fullscrapes_mrtg( char * reply ) {
   ot_time t = time( NULL ) - ot_start_time;
   return sprintf( reply,
-                 "%llu\n%llu\n%i seconds (%i hours)\nopentracker full scrape stats, %lu conns/s :: %lu bytes/s.",
+                 "%llu\n%llu\n%i seconds (%i hours)\ntracker.renfei.net full scrape stats, %lu conns/s :: %lu bytes/s.",
                  ot_full_scrape_count * 1000,
                  ot_full_scrape_size,
                  (int)t,
@@ -415,7 +415,7 @@ static size_t stats_peers_mrtg( char * reply ) {
 
   iterate_all_torrents( torrent_statter, (uintptr_t)&stats );
 
-  return sprintf( reply, "%llu\n%llu\nopentracker serving %llu torrents\nopentracker",
+  return sprintf( reply, "%llu\n%llu\ntracker.renfei.net serving %llu torrents\ntracker.renfei.net",
                  stats.peer_count,
                  stats.seed_count,
                  stats.torrent_count
@@ -426,7 +426,7 @@ static size_t stats_torrents_mrtg( char * reply )
 {
   size_t torrent_count = mutex_get_torrent_count();
 
-  return sprintf( reply, "%zd\n%zd\nopentracker serving %zd torrents\nopentracker",
+  return sprintf( reply, "%zd\n%zd\ntracker.renfei.net serving %zd torrents\ntracker.renfei.net",
                  torrent_count,
                  (size_t)0,
                  torrent_count
@@ -452,7 +452,7 @@ static size_t stats_return_renew_bucket( char * reply ) {
 static size_t stats_return_sync_mrtg( char * reply ) {
 	ot_time t = time( NULL ) - ot_start_time;
 	return sprintf( reply,
-                 "%llu\n%llu\n%i seconds (%i hours)\nopentracker connections, %lu conns/s :: %lu success/s.",
+                 "%llu\n%llu\n%i seconds (%i hours)\ntracker.renfei.net connections, %lu conns/s :: %lu success/s.",
                  ot_overall_sync_count,
                  0LL,
                  (int)t,
@@ -466,7 +466,7 @@ static size_t stats_return_completed_mrtg( char * reply ) {
   ot_time t = time( NULL ) - ot_start_time;
 
   return sprintf( reply,
-                 "%llu\n%llu\n%i seconds (%i hours)\nopentracker, %lu completed/h.",
+                 "%llu\n%llu\n%i seconds (%i hours)\ntracker.renfei.net, %lu completed/h.",
                  ot_overall_completed,
                  0LL,
                  (int)t,
