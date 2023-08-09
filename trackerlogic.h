@@ -59,7 +59,7 @@ typedef struct { ot_ip6 address; int bits; }
 #define OT_MAX_THREADS 64
 
 /* 服务端删除peer时间，单位分钟 */
-#define OT_PEER_TIMEOUT 60
+#define OT_PEER_TIMEOUT 144
 
 /* We maintain a list of 1024 pointers to sorted list of ot_torrent structs
  Sort key is, of course, its hash */
