@@ -342,7 +342,7 @@ static ssize_t http_handle_scrape( const int64 sock, struct ot_workstruct *ws, c
   /* This is to hack around stupid clients that send "scrape ?info_hash" */
   if( read_ptr[-1] != '?' ) {
     while( ( *read_ptr != '?' ) && ( *read_ptr != '\n' ) ) ++read_ptr;
-    if( *read_ptr == '\n' ) HTTPERROR_400_PARAM;
+    if( *read_ptr == '\n' ) HTTPERROR_302;
     ++read_ptr;
   }
 
