@@ -35,8 +35,11 @@ typedef struct { ot_ip6 address; int bits; }
 /* Some tracker behaviour tunable */
 #define OT_CLIENT_TIMEOUT 30
 #define OT_CLIENT_TIMEOUT_CHECKINTERVAL 10
+/* 客户端最小间隔请求时间，客户端可能不会遵守 */
 #define OT_CLIENT_TIMEOUT_SEND (60*30)
+/* 客户端默认间隔请求时间 */
 #define OT_CLIENT_REQUEST_INTERVAL (60*120)
+/* 服务端下发随机客户端间隔请求时间调整，提高性能，默认允许误差随机6分钟内*/
 #define OT_CLIENT_REQUEST_VARIATION (60*6)
 
 #define OT_TORRENT_TIMEOUT_HOURS 24
@@ -55,7 +58,8 @@ typedef struct { ot_ip6 address; int bits; }
 #define OT_ADMINIP_MAX 64
 #define OT_MAX_THREADS 64
 
-#define OT_PEER_TIMEOUT 144
+/* 服务端删除peer时间，单位分钟 */
+#define OT_PEER_TIMEOUT 30
 
 /* We maintain a list of 1024 pointers to sorted list of ot_torrent structs
  Sort key is, of course, its hash */
