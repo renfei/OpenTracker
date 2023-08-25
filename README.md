@@ -14,6 +14,7 @@ yum -y install unzip wget gcc zlib-devel make
 git clone -b renfei https://github.com/renfei/OpenTracker.git
 cd OpenTracker
 make -C ./libowfat-0.32
+cp -r libowfat-0.32 ../libowfat
 make
 ```
 
