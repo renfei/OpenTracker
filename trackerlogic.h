@@ -36,7 +36,7 @@ typedef struct { ot_ip6 address; int bits; }
 #define OT_CLIENT_TIMEOUT 30
 #define OT_CLIENT_TIMEOUT_CHECKINTERVAL 10
 /* 客户端最小间隔请求时间，客户端可能不会遵守 */
-#define OT_CLIENT_TIMEOUT_SEND (60*60*2)
+#define OT_CLIENT_TIMEOUT_SEND (60*30)
 /* 客户端默认间隔请求时间 */
 #define OT_CLIENT_REQUEST_INTERVAL (60*60*2)
 /* 服务端下发随机客户端间隔请求时间调整，提高性能，默认允许误差随机6分钟内*/
